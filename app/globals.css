@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* Design tokens from the "Expense Tracker" Claude Design prototype */
+@theme {
+  --color-cream: #f0eee6;
+  --color-surface: #fbfaf5;
+  --color-wash: #f7f5ef;
+  --color-field: #f1eee6;
+  --color-line: #e6e1d5;
+  --color-line-soft: #ece7db;
+  --color-track: #ece8dd;
+  --color-ink: #1a1915;
+  --color-ink-soft: #3a362e;
+  --color-muted: #6b6659;
+  --color-faint: #9e9888;
+  --color-fainter: #b4ae9e;
+  --color-accent: #c15f3c;
+  --color-accent-hover: #a94e2e;
+  --color-accent-deep: #b0512f;
+  --color-accent-deeper: #8f3f22;
+  --color-accent-soft: #f3e7df;
+  --color-good: #4e7a5a;
+  --color-good-deep: #3f6b4c;
+  --color-good-soft: #e7efe6;
+  --color-bad: #c0392b;
+  --color-bad-soft: #f7e3df;
+  --color-indigo: #6c6fb0;
+  --color-indigo-soft: #edeaf4;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+}
+
+/* Base styles live in the base layer so Tailwind utilities
+   (e.g. text-white on button-styled links) can override them. */
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a {
+    color: var(--color-accent-deep);
+  }
+  a:hover {
+    color: var(--color-accent-deeper);
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.45;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #dad4c4;
+  border-radius: 8px;
+  border: 2px solid #f0eee6;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9c2ae;
+}
+
+@keyframes hbUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
